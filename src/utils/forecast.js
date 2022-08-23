@@ -13,8 +13,9 @@ const forecast = ({lon, lat}, callback) => {
             callback('No forecast for that location', undefined)
         } else {
             const weather = body.current.weather_descriptions[0]
-                            + ', Temperatur: ' + body.current.temperature + '°C'
-                            + ', Gefühlt: ' + body.current.feelslike  + '°C'
+                            + '\nTemperature: ' + body.current.temperature + '°C'
+                            + '\nFeels like: ' + body.current.feelslike  + '°C'
+                            + '\nWind direction: ' + body.current.wind_dir
             callback(undefined, weather)
         }
     })
